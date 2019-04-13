@@ -11,7 +11,11 @@ public class Main {
 
     public static void main(String[] args) {
         //lambda de tip Function, care primeste param si returneaza rez
+        //Lambda este o functie anonima
         Function<Integer, Integer> doubleItFn = a -> a * 2;
+        //Method reference
+        Function<Integer, Integer> doubleItRef = Main::doubleIt;
+
         Function<Integer, String> returnIt = b -> "Rezultatul este: " + b;
         Function<String, String> nrCaractere = c -> {
             int caractere = c.length();
@@ -26,6 +30,8 @@ public class Main {
 
         //lambda de tip Consumer, care primeste param si nu returneaza rez
         Consumer<String> adaugaInLista = a -> listaStringuri.add(a);
+        //Method reference
+        Consumer<Double> afiseazaString = System.out::println;
 
         //lambda de tip Runnable, care nu primeste param si nu returneaza rez
         Runnable currentTime = () -> System.out.println(LocalDateTime.now());
